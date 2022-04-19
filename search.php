@@ -16,7 +16,9 @@
                     <div class="search-result">
 
                         <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+
                         <?php search_excerpt_highlight(); ?>
+                        
                         <a href="<?php the_permalink(); ?>" class="btn btn-primary"><span><?php echo __( 'Read more', 'ir' ); ?><i class="fa-solid fa-circle-chevron-right"></i></a>
 
 
