@@ -1,0 +1,98 @@
+/*
+Theme Name:     RBG Holdings plc - Gutenberg
+Theme URI:
+Author:         Brighter IR
+Author URI:     brighterir.com
+Description:    Brighter*IR Gutenberg framework
+Version:        1.1
+Text Domain:    ir
+
+********************************
+* SCSS GUIDE
+********************************
+
+- All core SCSS files are under /scss/ and the other SCSS files are in their retrospective directories within the extensions folder.
+- It's all imported through /SCSS/style-base.scss and should compile to /style-base.css on the root of the theme
+
+
+********************************
+* Gutenberg Framework v1
+********************************
+Check BitBucket commits for ALL changelogs, only main ones listed here.
+
+Changelog:
+
+
+25-11-2019
+- Cleanup SCSS
+- Get rid of unused templates
+- Remove WP Bakery instances and relavated files
+- Organise new folder structure
+
+
+27-02-2020
+- Added new extensions for eg. sidebars and template parts
+- Convert most styles to mobile first
+- Same page structure
+- Clean up Quadrise site
+- Removed JS compiling (not everyone uses JS compiler)
+- Added new blocks
+- Replaced logo via customiser to template parts for proper SVG support with iThemes
+- Added more useful functions like auto alt tags, disable customiser ect
+- Support for Kandance Accordions & Tabs, feel free to add more block class names from Kandance
+- Moved footer widgets to ACF under Appearance -> Footer
+- Added social media to ACF under Appearance -> Header
+- Deleted some inner banner fields to reduce clutter
+
+
+06-04-2020
+- Convert sections into div because W3C...
+- Update fancybox and body fix for ie and other browsers
+- Fixed a extend SCSS function being used for wrapper on banners causing messy CSS output, will go through the rest of the Extends.
+- Converted main button class to include silent class. Need to look at converting them all
+- Add JS code to refresh ifame on tab change
+
+
+13-11-2020
+- Split banner SCSS to home-banners.scss & inner-banners.scss, cleaned up and simplified code
+- Fixed Vimeo banner autoplay
+- Cleaned up banner overlay options; overlay colour & inner banner height to be set via SCSS or can be overriden per page basis
+- Added option to enable banner arrows for home slick banner
+- Added "Image Position" field for home banners (Inner banners has this option already)
+- Banner Image field for 404 & Search under 'Theme Options'
+- Convert all classes with "__" to "-" for example "full__width" to "full-width"
+- Default wrap changed from 1400px to 1160px
+- Added "menu-item-has-children" class to menu walker
+- Removed class fancy__btn__effect & funny__radius from buttons
+- Removed <?php wp_title( '-', true, 'right' ); from header.php as this is added via wp_head
+- Convert sidebars to old way via widgets + WPMU sidebar plugin
+- Fixed undefined var notice for document block
+- Fixed undefined var notice for get_file_type()
+- Renamed prefix from bir_ to gf_ (gutenberg framework) in functions
+- Fixed History block, missing style include
+- Cleaned up the quote block (de-quadrised)
+- Added Gravity form function to convert input submit to button
+- Converted document table from ACF PHP to ACF UI for editable fields
+- Fixed iframe block not showing ACF fields
+- Added Footer Widgets back in as per Bakery framework
+- Button block has a new tab option
+- Seperate SCSS into relevant folder structure
+- Inherit line-height from body rather than set them everywhere
+- Started converting px to rem where it makes sense
+
+
+On-going
+- TODO: Convert px measuring to rem/px
+- TODO: Clean up more junk from Quadrise
+
+
+Future development
+- TODO: Revamp mobile menu
+- TODO: Revamp team block
+- TODO: Revamp table styling, tablepress depreciation
+- TODO: Revamp documents block to comply with Google Tag Manager tracking
+- TODO: Look for a better solution for spacing between blocks
+- TODO: Revamp search page
+
+
+*/

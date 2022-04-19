@@ -1,0 +1,144 @@
+.btn,
+%btn {
+	overflow: hidden;
+	text-align: center;
+	padding: 12px 30px;
+	color: white;
+	background: transparent;
+	border: 3px solid white;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-family: $secondaryFont;
+	line-height: normal;
+	position: relative;
+	align-items: center;
+    display: inline-flex;
+	justify-content: center;
+	font-weight: 500;
+	min-width: 180px;
+	transition: 450ms $smooth;
+
+	svg,
+	span {
+		z-index: 2;
+		position: relative;
+		transition: 450ms $smooth;
+
+		path {
+			fill: white;
+		}
+
+	}
+
+	i{
+		transition: 450ms $smooth;
+		padding-left: 1em;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: white;
+		border-color: white;
+		color: $primary;
+
+		svg,
+		span {
+
+			path {
+				color: $primary;
+				fill: $primary;
+			}
+
+		}
+		i{
+			transform: translateX(0.2em);
+			color: $red;
+		}
+
+	}
+
+	&.btn-primary,
+	&.is-style-btn-primary {
+		border-color: $primary;
+		color: white;
+		background: $primary;
+
+		i{
+			color: $secondary;
+		}
+		
+		path {
+			fill: $primary;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: rgba(white, 0.7);
+	
+			svg,
+			span {
+			
+				path {
+					fill: white;
+				}
+
+			}
+
+			i{
+				color: $red;
+			}
+	
+		}
+
+	}
+
+	&.btn-secondary,
+	&.is-style-btn-secondary {
+		background: $secondary;
+		border: 0;
+		color: $primary;
+
+		path {
+			fill: $secondary;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+
+			svg,
+			span {
+				color: rgba($primary, 0.7);
+
+				path {
+					fill: white;
+				}
+			}
+
+			i{
+				color: $red;
+			}
+	
+		}
+
+	}
+
+
+	&.full-width {
+		display: block;
+	}
+
+	&.center {
+		position: relative;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		transition: 200ms $smooth;
+	}
+
+
+
+
+}

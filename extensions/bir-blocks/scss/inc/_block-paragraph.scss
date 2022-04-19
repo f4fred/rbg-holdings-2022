@@ -1,0 +1,19 @@
+.is-style-intro {
+    font-size: 1.9rem;
+    color: $secondary;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    @include breakpoint(min-tablet) {
+        font-size: 2.1rem;
+    }
+
+}
+
+.is-style-feature {
+    background: $primary;
+    padding: 20px;
+    color: white;
+    font-weight: 400;
+    position: relative;
+}

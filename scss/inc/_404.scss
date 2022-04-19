@@ -1,0 +1,43 @@
+/* --- PAGE : 404 --- */
+.error404 {
+
+	#content {
+        margin: 60px 0 80px 0;
+	}
+
+	main {
+
+		h1 {
+			margin: 0 0 3rem 0;
+			opacity: .6;
+
+			strong {
+				display: block;
+				font-size: 11rem;
+				color: #7c8084;
+				line-height: 12rem;
+			}
+
+			span {
+				display: block;
+				font-size: 2.95rem;
+				margin-top: -1rem;
+				color: #687077;
+			}
+
+		}
+
+		p {
+            max-width: 50%;
+            margin: 0 auto;
+
+            a {
+                color: $primary;
+                font-weight: 600;
+            }
+
+        }
+
+	}
+
+}

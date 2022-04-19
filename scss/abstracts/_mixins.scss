@@ -1,0 +1,404 @@
+/*
+* MEDIA QUERIES
+* Breakpoints for responsive sites
+*/
+
+$old-mobile: 500;
+$mobile: 768;
+$tablet: 1024;
+$desktop: 1440;
+$wide-desktop: 1920;
+
+@mixin breakpoint($breakpoint) {
+
+    // Device
+    @if $breakpoint == old-mobile {
+        @media (max-width: $old-mobile + px) { @content; }
+    }
+    @if $breakpoint == mobile {
+        @media (min-width: $old-mobile+1 + px) and (max-width: $mobile + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media (min-width: $mobile+1 + px) and (max-width: $tablet + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: $tablet+1 + px) and (max-width: $desktop + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == wide-desktop {
+        @media (min-width: $desktop+1 + px) and (max-width: $wide-desktop + px) {
+            @content;
+        }
+    }
+
+    // Max Width
+    @if $breakpoint == max-old-mobile {
+        @media (max-width: $old-mobile + px) { @content; }
+    }
+    @if $breakpoint == max-mobile {
+        @media (max-width: $mobile + px) { @content; }
+    }
+    @if $breakpoint == max-tablet {
+        @media (max-width: $tablet + px) { @content; }
+    }
+    @if $breakpoint == max-desktop {
+        @media (max-width: $desktop + px) { @content; }
+    }
+    @if $breakpoint == max-wide-desktop {
+        @media (max-width: $wide-desktop + px) { @content; }
+    }
+
+    // Min Width
+    @if $breakpoint == min-old-mobile {
+        @media (min-width: $old-mobile+1 + px) { @content; }
+    }
+    @if $breakpoint == min-mobile {
+        @media (min-width: $mobile+1 + px) { @content; }
+    }
+    @if $breakpoint == min-tablet {
+        @media (min-width: $tablet+1 + px) { @content; }
+    }
+    @if $breakpoint == min-desktop {
+        @media (min-width: $desktop+1 + px) { @content; }
+    }
+    @if $breakpoint == min-wide-desktop {
+        @media (min-width: $wide-desktop+1 + px) { @content; }
+    }
+
+    // Old Mobile and up
+    @if $breakpoint == old-mobile-to-mobile {
+        @media (min-width: $old-mobile+1 + px) and (max-width: $mobile + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == old-mobile-to-tablet {
+        @media (min-width: $old-mobile+1 + px) and (max-width: $tablet + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == old-mobile-to-desktop {
+        @media (min-width: $old-mobile+1 + px) and (max-width: $desktop + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == old-mobile-to-wide-desktop {
+        @media (min-width: $old-mobile+1 + px) and (max-width: $wide-desktop + px) {
+            @content;
+        }
+    }
+
+    // Mobile and up
+    @if $breakpoint == mobile-to-tablet {
+        @media (min-width: $mobile+1 + px) and (max-width: $tablet + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile-to-desktop {
+        @media (min-width: $mobile+1 + px) and (max-width: $desktop + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == mobile-to-wide-desktop {
+        @media (min-width: $mobile+1 + px) and (max-width: $wide-desktop + px) {
+            @content;
+        }
+    }
+
+    // Tablet and up
+    @if $breakpoint == tablet-to-desktop {
+        @media (min-width: $tablet+1 + px) and (max-width: $desktop + px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-to-wide-desktop {
+        @media (min-width: $tablet+1 + px) and (max-width: $wide-desktop + px) {
+            @content;
+        }
+    }
+
+    // Desktop and up
+    @if $breakpoint == desktop-to-wide-desktop {
+        @media (min-width: $desktop+1 + px) and (max-width: $wide-desktop + px) {
+            @content;
+        }
+    }
+
+}
+
+// IE 10 & 11
+// Usage:
+// @include target-ie
+@mixin target-ie {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+
+// iOS
+// Usage:
+// @include target-ios
+@mixin target-ios {
+    @supports (-webkit-overflow-scrolling: touch) {
+        @content;
+    }
+}
+
+/*
+* TEXT TRUNCATE
+* An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block.
+* Usage: @include text-truncate;
+* Source: http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+*/
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*
+* DON'T BREAK
+* Useful mixing so links don't overrun their container
+* Usage: @include dontbreak();
+* Source: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+*/
+@mixin dontbreak() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/*
+* Skew
+* Useful mixing to create skewed edges
+* Usage: @include angle-edge(bottomright, 3deg, topleft, 3deg, #fff);
+* Source: http://www.hongkiat.com/blog/skewed-edges-css/
+*/
+@mixin angle-edge($pos-top:null, $angle-top:null, $pos-btm:null, $angle-btm:null, $background:null){
+    width: 100%;
+    position: relative;
+    background: $background;
+
+    &::before,
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        transition: ease all .5s;
+    }
+
+    @if $pos-top{
+
+        &::before {
+
+            @if $pos-top == 'topleft'{
+                top: 0;
+                transform-origin: right top;
+                transform: skewY($angle-top);
+            }
+
+            @if $pos-top == 'topright' {
+                top: 0;
+                transform-origin: left top;
+                transform: skewY(-$angle-top);
+            }
+        }
+
+    }
+
+    @if $pos-btm {
+
+        &::after{
+
+            @if $pos-btm == 'bottomleft' {
+                bottom: 0;
+                transform-origin: right bottom;
+                transform: skewY(-$angle-btm);
+
+            }
+
+            @if $pos-btm == 'bottomright' {
+                bottom: 0;
+                transform-origin: left bottom;
+                transform: skewY($angle-btm);
+            }
+
+        }
+
+    }
+
+}
+
+/*
+* SASS Parent append
+* Useful if you want to add an append to the parent without writing it out again
+* Usage: @include parent-append(":hover")
+* Source: https://codepen.io/imkremen/pen/RMVBvq
+*/
+@function str-to-list($string, $separator: ' ', $startAt: 1) {
+    $workStr: str-slice($string, $startAt);
+    $list: ();
+    $indexOfFirstSpace: str-index($workStr, $separator);
+    @if $indexOfFirstSpace==null {
+       $list: ($workStr);
+    }
+    @else {
+       $list: (str-slice($workStr, 1, $indexOfFirstSpace - 1));
+       $list: join($list, str-to-list($workStr, $startAt: $indexOfFirstSpace + 1));
+    }
+    @return $list;
+ }
+
+ @function parent-append ($appendix, $parent, $at-start) {
+    $parentSelector: str-to-list(#{&});
+    $lenght: length($parentSelector);
+    @if $parent >=$lenght or $parent < 0 {
+       @error "Index '#{$parent}' is out of range";
+    }
+    $pos: $lenght - $parent;
+    @if $at-start == false {
+     $selector: set-nth($parentSelector, $pos, nth($parentSelector, $pos) + $appendix);
+     @return $selector;
+    }
+    @if $at-start == true {
+      $selector: set-nth($parentSelector, $pos, $appendix + nth($parentSelector, $pos));
+      @return $selector;
+    }
+
+ }
+
+ /// Append defined string to parent selector
+ /// @require {function} parent-append
+ /// @param {String} $appendix - selector that we want append to parent
+ /// @param {Number} $parent [1] - index of parent selector
+ /// @param {Boolean} $at-start [false] - append to start of parent selector
+ @mixin parent-append ($appendix, $parent: 1, $at-start: false) {
+    @at-root #{parent-append($appendix, $parent, $at-start)} {
+       @content;
+    }
+}
+
+/*
+* Checked animation
+*/
+@-webkit-keyframes checked {
+    0% { -webkit-transform: scale(1); transform: scale(1); }
+    50% { -webkit-transform: scale(1.05); transform: scale(1.05); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+
+  @keyframes checked {
+    0% { -webkit-transform: scale(1); transform: scale(1); }
+    50% { -webkit-transform: scale(1.05); transform: scale(1.05); }
+    100% { -webkit-transform: scale(1); transform: scale(1); }
+  }
+  @-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(45deg); }
+  }
+  @keyframes spin {
+    from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    to {-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+  }
+
+
+/*
+* Breakpoint debugging
+*/
+
+@mixin debugging-breakpoints-desktop-down {
+	&:after {
+		z-index: 99999999999;
+		position: fixed;
+		right: 0;
+		top: 0;
+		padding: 6px;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		color: white;
+		background: black;
+		content: "Above all breakpoints";
+		opacity: 1;
+		pointer-events: none;
+
+		@include breakpoint(max-wide-desktop) {
+			background: forestgreen;
+			content: "< max-wide-desktop";
+		}
+
+		@include breakpoint(max-desktop) {
+			background: deeppink;
+			content: "< max-desktop";
+		}
+
+		@include breakpoint(max-tablet) {
+			background: darkblue;
+			content: "< max-tablet";
+		}
+
+		@include breakpoint(max-mobile) {
+			background: brown;
+			content: "< max-mobile";
+		}
+
+		@include breakpoint(max-old-mobile) {
+			background: blueviolet;
+			content: "< max-old-mobile";
+		}
+	}
+}
+
+@mixin debugging-breakpoints-mobile-up {
+	&:after {
+		z-index: 99999999999;
+		position: fixed;
+		right: 0;
+		top: 0;
+		padding: 6px;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		color: white;
+		background: black;
+		content: "Below all breakpoints";
+		opacity: 1;
+		pointer-events: none;
+
+		@include breakpoint(min-old-mobile) {
+			background: blueviolet;
+			content: "min-old-mobile >";
+		}
+
+		@include breakpoint(min-mobile) {
+			background: brown;
+			content: "min-mobile >";
+		}
+
+		@include breakpoint(min-tablet) {
+			background: darkblue;
+			content: "min-tablet >";
+		}
+
+		@include breakpoint(min-desktop) {
+			background: deeppink;
+			content: "min-desktop >";
+		}
+
+		@include breakpoint(min-wide-desktop) {
+			background: forestgreen;
+			content: "min-wide-desktop >";
+		}
+	}
+}

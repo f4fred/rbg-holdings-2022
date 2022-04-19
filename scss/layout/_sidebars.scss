@@ -1,0 +1,84 @@
+.sidebar-enabled {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    .content {
+
+        float: right;
+        width: 70%;
+        z-index: 1;
+
+        @include breakpoint (max-tablet){
+            width: 100%;
+        }
+    }
+
+    .sidebar {
+        position: relative;
+        float: left;
+        margin: 50px 50px 50px 0;
+        width: 30%;
+        z-index: 5;
+
+        .sidebar-widget{
+            background-color: rgba($secondary, 0.3);
+            padding: 20px;
+            border: 1px solid #d7d7d7;
+            width: 100%;
+
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 3rem;
+
+                li{
+                    list-style: none;
+
+                    a{
+                        display: block;
+                        padding: 0.5em 1em;
+                        background: rgba($secondary, 0.7);
+                        transition: 200ms $smooth;
+                        border-left: 2px solid transparent;
+
+                        &:hover{
+                            background: $secondary;
+                            border-left-color: $red;
+                        }
+                    }
+
+                    &.current-menu-item{
+
+                        a{
+                            border-left: 2px solid $red;
+                        }
+                    }
+
+                    &:last-of-type{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            >div:last-of-type{
+                ul{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @include breakpoint (max-tablet){
+            margin-top: 0;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    @include breakpoint (max-tablet){
+        flex-direction: column;
+    }
+
+
+}

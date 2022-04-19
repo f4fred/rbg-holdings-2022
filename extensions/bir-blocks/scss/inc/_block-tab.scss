@@ -1,0 +1,81 @@
+// TABS
+.wp-block-kadence-tabs{
+
+    .kt-tabs-wrap .kt-tabs-title-list{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .kt-title-item{
+
+            width: 100%;
+            margin: 0;
+
+            // ALL TABS
+            .kt-tab-title{
+                justify-content: center;
+                background: transparent;
+                border-radius: 0;
+                border: 2px solid $primary;
+                width: 100%;
+
+                &:hover{
+                    background: rgba($primary, 0.2);
+                    border-color: $primary;
+                }
+            }
+
+            // ACTIVE TAB
+            &.kt-tab-title-active{
+
+                .kt-tab-title{
+                    color: white;
+                    background: $primary;
+                    border-color: $primary;
+                }
+            }
+
+            &#regulatory-news a span{
+
+                &:after{
+                    font: var(--fa-font-solid);
+                    content: '\f1ea';
+                    margin-left: 0.5em;
+                }
+
+            }
+
+            &#subscribe a span{
+
+                &:after{
+                    font: var(--fa-font-solid);
+                    content: '\f0f3';
+                    margin-left: 0.5em;
+                }
+
+            }
+
+        }
+
+        // ON MOBILE
+
+        @include breakpoint(max-mobile){
+
+            flex-direction: column;
+
+        }
+
+    }
+
+}
+
+.kt-tabs-content-wrap > .wp-block-kadence-tab{
+    border-color: $secondary;
+    border: none !important;
+    background: transparent !important;
+
+    @include breakpoint (max-mobile){
+        padding: 15px 0 !important;
+    }
+}

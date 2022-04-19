@@ -1,0 +1,98 @@
+
+/* block : posts */
+.posts.col {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -20px;
+}
+.posts.col .excerpt {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: calc(50%);
+	padding: 30px;
+}
+.posts.col .excerpt > * {
+	width: 100%;
+}
+.posts.col .excerpt p {
+	margin-bottom: 25px;
+}
+.posts.col .excerpt p.meta {
+	margin-bottom: 20px;
+}
+.posts.col .excerpt .btn-sm {
+	margin-top: auto;
+}
+
+
+.posts.col .excerpt {
+	width: calc(50% - 20px);
+}
+.boxed .posts .excerpt {
+	padding: 40px 70px;
+}
+
+.excerpt {
+	margin: 0 0px 20px 20px;
+	border: 1px solid #eaeaea;
+}
+.excerpt h3 {
+	font-size: 18px;
+	margin: 0;
+	font-family: $primaryFont;
+
+}
+.excerpt h3 a {
+	display: block;
+    font-size: 2.1rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.325;
+    letter-spacing: 0.05rem;
+    text-decoration: none;
+    color: #2B2D48;
+}
+.excerpt h3 a:hover,
+.excerpt h3 a:active,
+.excerpt h3 a:focus {
+	color: var(--primary);
+}
+.excerpt p {
+	margin: 0;
+}
+.excerpt p.meta {
+    font-size: 15px;
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid rgba(0,0,0, .05);
+}
+.excerpt .btn-sm {
+	font-family: var(--secondaryFont);
+	margin-top: 25px;
+	color: #fff;
+	color: #621244;
+}
+.excerpt .btn-sm:hover,
+.excerpt .btn-sm:hover:active,
+.excerpt .btn-sm:hover:focus {
+	color: var(--secondary);
+}
+
+.posts.col .excerpt,
+.boxed .posts .excerpt {
+	padding: 20px;
+	background: rgba(0,0,0, .03);
+}
+
+@include breakpoint(max-mobile){
+
+	.posts.col .excerpt{
+		width: 100%;
+	}
+
+}

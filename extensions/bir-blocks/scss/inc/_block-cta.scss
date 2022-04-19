@@ -1,0 +1,48 @@
+
+/* block : cta */
+.cta {
+	margin-bottom: 50px!important;
+}
+.cta-bg {
+	display: block;
+	min-height: 250px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.cta-bg.icon {
+	background-size: 30%;
+}
+
+.cta.icon-magni .icon {
+	background-size: 45%;
+}
+
+
+.cta-content {
+	padding: 4rem 2rem;
+	background: $primary;
+	position: relative;
+	color: white;
+	text-align: center;
+
+}
+.cta-content h3 {
+	font-size: 30px;
+	margin: -1rem 0 2rem;
+}
+.cta-content *:last-child {
+	margin-bottom: 0;
+}
+
+@include breakpoint(max-mobile){
+
+	.cta-content{
+
+		h3{
+			font-size: 20px;
+		}
+
+	}
+
+}

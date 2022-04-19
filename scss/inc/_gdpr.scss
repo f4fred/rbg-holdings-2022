@@ -1,0 +1,29 @@
+// Cookie Style fixes
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme {
+    border-top: 0 !important;
+  }
+  @include breakpoint(max-mobile) {
+    .moove-gdpr-cookie-notice {
+      text-align: center;
+    }
+    .moove-gdpr-button-holder {
+      .mgbutton {
+        margin: auto !important;
+      }
+    }
+  }
+  @include target-ie {
+    .moove-gdpr-info-bar-content {
+      display: flex !important;
+      .moove-gdpr-button-holder {
+        margin-top: 0 !important;
+      }
+    }
+    .gdpr-icon.moovegdpr-arrow-close:before,
+    .gdpr-icon.moovegdpr-arrow-close:after {
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+  }
+  

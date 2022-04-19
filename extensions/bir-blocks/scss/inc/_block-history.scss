@@ -1,0 +1,88 @@
+/* block : History */
+
+.history {
+
+    .year-block {
+
+        .year {
+            font-weight: 600;
+            font-family: $secondaryFont;
+            font-size: 1.8rem;
+            background-color: $primary;
+            color: white;
+            display: block;
+            padding: 5px;
+            width: 150px;
+            text-align: center;
+
+            @include breakpoint(min-mobile) {
+                margin: 0 auto;
+            }
+        }
+
+        .events {
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            &:before {
+                content: '';
+                height: 100%;
+                position: absolute;
+                width: 2px;
+                background-color: $primary;
+                top: 0;
+                left: 50%;
+
+                @include breakpoint(max-mobile) {
+                    left: 74px;
+                }
+            }
+
+            .event-block {
+                font-weight: 500;
+                margin-bottom: 40px;
+                position: relative;
+                overflow: hidden;
+                width: 50%;
+                padding: 40px 100px 40px 40px;
+                align-self: flex-end;
+                text-align: left;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: rgba(0, 54, 118, 0.1);
+                    bottom: 0;
+                    left: -20px;
+                }
+
+                @include breakpoint(min-mobile) {
+                    &.odd {
+                        padding: 40px 40px 40px 100px;
+                        align-self: flex-start;
+                        text-align: right;
+
+                        &:before {
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+
+                @include breakpoint(max-mobile) {
+                    width: calc(100% - 74px);
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+/* -------------------------------------------
+***** Prepend Imports *****
+------------------------------------------- */
+@import 'abstracts/_reset';
+@import 'abstracts/_vars';
+@import 'abstracts/_mixins';
+
+@import 'base/_utilities';
+@import 'base/_typography';
+@import 'base/_animate';
+@import 'base/_base';
+@import 'base/_fonts';
+
+@import 'layout/_header';
+@import 'layout/_footer';
+@import 'layout/_sidebars';
+@import 'layout/_blog';
+
+@import 'inc/_tables';
+@import 'inc/_forms';
+@import 'inc/_login';
+@import 'inc/_404';
+@import 'inc/_search';
+@import 'inc/_social';
+@import 'inc/_gdpr';
+@import 'inc/_custom';
+
+/* -------------------------------------------
+***** Packages *****
+------------------------------------------- */
+@import '../packages/slick/_slick';
+
+/* -------------------------------------------
+***** Extensions *****
+------------------------------------------- */
+@import '../extensions/bir-banners/scss/_bir-banners';
+@import '../extensions/bir-blocks/scss/_bir-blocks';

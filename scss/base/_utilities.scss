@@ -1,0 +1,323 @@
+.text-center,
+.center {
+	text-align: center;
+}
+
+.hidden,
+.hide {
+	display: none;
+}
+
+.floatleft {
+	float: left;
+	align-self: flex-start;
+}
+
+.floatright {
+	float: right;
+	align-self: flex-end;
+}
+
+.wrap {
+	max-width:1260px;
+	width:100%;
+	padding: 0 60px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include breakpoint(max-mobile){
+		padding: 0 30px;
+	  }
+}
+
+.no-scroll {
+	position: fixed!important;
+    width: 100%!important;
+    // height: 100%;
+}
+
+.mt0 {
+	margin-top: 0 !important;
+}
+
+.mb0 {
+	margin-bottom: 0 !important;
+}
+
+.m0 {
+	margin: 0 !important;
+}
+
+.pt0 {
+	padding-top: 0 !important;
+}
+
+.pb0 {
+	padding-bottom: 0 !important;
+}
+
+.p0 {
+	padding: 0 !important;
+}
+
+.mt1{
+	margin-top: 1rem;
+}
+
+.mb1{
+	margin-bottom: 1rem;
+}
+
+.mt2 {
+	margin-top: 2rem !important;
+}
+
+.mt3 {
+	margin-top: 3rem !important;
+}
+
+.mt4 {
+	margin-top: 4rem !important;
+}
+
+.mt5 {
+	margin-top: 5rem !important;
+}
+
+.mt6 {
+	margin-top: 6rem !important;
+}
+
+.mt7 {
+	margin-top: 7rem !important;
+}
+
+.mt8 {
+	margin-top: 8rem !important;
+}
+
+.mt9 {
+	margin-top: 9rem !important;
+}
+
+.mt10 {
+	margin-top: 10rem !important;
+}
+
+// margin bottom
+
+.mb2 {
+	margin-bottom: 2rem !important;
+}
+
+.mb3 {
+	margin-bottom: 3rem !important;
+}
+
+.mb4 {
+	margin-bottom: 4rem !important;
+}
+
+.mb5 {
+	margin-bottom: 5rem !important;
+}
+
+.mb6 {
+	margin-bottom: 6rem !important;
+}
+
+.mb7 {
+	margin-bottom: 7rem !important;
+}
+
+.mb8 {
+	margin-bottom: 8rem !important;
+}
+
+.mb9 {
+	margin-bottom: 9rem !important;
+}
+
+.mb10 {
+	margin-bottom: 10rem !important;
+}
+
+.ml0 {
+	margin-left: 0 !important;
+}
+
+.wp-block-separator{
+	border-color: $primary;
+	width: 50%;
+	margin: 20px auto;
+}
+
+/* LIGHTBOX CSS */
+
+.lightbox{
+	cursor: pointer;
+}
+
+.img-lightbox{
+	position: fixed;
+	top: 0;
+	z-index: 10000;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.2s ease-out;
+  
+	.closeLightbox{
+	  position: absolute;
+	  top: 2em;
+	  right: 1em;
+	  font-size: 2em;
+	  color: white;
+	  cursor: pointer;
+	  transition: 0.2s ease-out;
+	  &:hover{
+		color: $red;
+	  }
+	}
+  
+	&.active{
+	  visibility: visible;
+	  opacity: 1;
+  
+  
+	  img{
+		transform: scale(1);
+	  }
+	}
+  
+	img{
+	  transition: 0.2s ease-out;
+	  transform: scale(0.9);
+	  max-height: 80%;
+  
+	  @include breakpoint(max-tablet) {
+		width: 100%;
+		height: auto;
+		max-height: 80%;
+	  }
+	}
+  }
+
+.angleRight{
+	padding: 10px 0;
+	position: relative;
+	&:before{
+		position: absolute;
+		content: '';
+		width: 400%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: $secondary;
+		transform: skew(-30deg);
+		transform-origin: top left;
+	  }
+}
+
+.breadcrumbs{
+
+	h3{
+		color: $secondary;
+		margin: 0;
+		width: 100%;
+
+		a{
+			width: 100%;
+		}
+
+		@include breakpoint(max-mobile){
+			width: auto;
+		}
+	}
+
+	&:before{
+		content: '';
+		background: $primary;
+		transform: skew(-30deg);
+		transform-origin: top left;
+		width: 33%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	position: relative;
+	z-index: 10;
+	padding: 10px 0;
+	background: $secondary;
+	color: $primary;
+	border-bottom: 2px solid $primary;
+	
+	.wrap{
+		position: inherit;
+		z-index: 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.separator{
+		color: $red;
+	}
+
+	.rank-math-breadcrumb{
+		width: 100%;
+
+		@include breakpoint(max-mobile){
+			width: 72%;
+		}
+	}
+	
+	a{
+		color: $primary;
+		transition: 200ms $smooth;
+		font-weight: 300;
+
+		&:hover{
+			color: $red;
+		}
+	}
+
+	p{
+		text-align: right;
+		margin: 0;
+		font-weight: 500;
+		margin-left: auto;
+		max-width:100%;
+	}
+}
+
+.primary-column{
+	background-color: $primary;
+	color: white;
+	padding: 3rem;
+}
+
+.secondary-column{
+	background-color: $secondary;
+	color: $text;
+	padding: 3rem;
+}
+
+.grecaptcha-badge{
+	z-index: 999;
+}
+
+.fa-ul .fa-li{
+	width: auto;
+	left: -1.5em;
+}

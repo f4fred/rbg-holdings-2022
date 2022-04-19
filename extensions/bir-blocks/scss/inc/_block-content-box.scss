@@ -1,0 +1,28 @@
+.content-box {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+
+    .content-box-overlay {
+        background: black;
+        opacity: .5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .content-box-content {
+        z-index: 2;
+        position: relative;
+    }
+
+    &.red-img-border{
+        img{
+            border: 1px solid $red;
+        }
+    }
+
+}

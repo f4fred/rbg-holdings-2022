@@ -1,0 +1,56 @@
+.document_table{
+
+    thead{
+        tr{
+            border-bottom-color: $primary;
+        }
+    }
+
+    tr{
+
+        &:not(:last-of-type){
+            border-bottom: 1px solid $secondary;
+        }
+        
+        td{
+            padding: 1em;
+
+            &.download{
+                padding: 1em 0.5em;
+            }
+        }
+    
+    }
+
+    .document_date{
+        width: 190px;
+    }
+
+
+
+    .file_name{
+
+        a{
+            transition: 450ms $smooth;
+
+            &:hover{
+                color: $red;
+            }
+        }
+    }
+
+    .download{
+        text-align: center;
+        
+        a{
+            display: block;
+            transition: 450ms $smooth;
+
+            &:hover{
+                transform: scale(1.1);
+                color: $red;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,95 @@
+/* -------------------------------------------
+***** Includes *****
+------------------------------------------- */
+@import 'inc/_block-button';
+@import 'inc/_block-cta';
+@import 'inc/_block-iframe';
+@import 'inc/_block-image-cta';
+@import 'inc/_block-paragraph';
+@import 'inc/_block-posts';
+@import 'inc/_block-team-grid';
+@import 'inc/_block-team';
+@import 'inc/_block-image-slider';
+@import 'inc/_block-quote';
+@import 'inc/_block-image';
+@import 'inc/_block-accordion';
+@import 'inc/_block-tab';
+@import 'inc/_block-counter';
+@import 'inc/_block-history';
+@import 'inc/_block-content-box';
+@import 'inc/_block-latest-document';
+@import 'inc/_block-row';
+@import 'inc/block-document-table';
+@import 'inc/block-calendar';
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+@mixin block-wide {
+    max-width:1600px; 
+    margin:0 auto; 
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.layout {
+
+    p + .bir-block,
+    p + .wp-block-group,
+    p + .wp-block-kadence-rowlayout,
+    p + .wp-block-kadence-accordion,
+    p + .wp-block-kadence-tabs,
+    p + .wp-block-columns,
+    p + .wp-block-archives,
+    p + .wp-block-image,
+    p + .wp-block-quote,
+    p + .wp-block-embed,
+    p + table {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+
+        @include breakpoint(min-tablet) {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            
+        }
+
+    }
+
+}
+
+
+.wp-block-column {
+
+    @media only screen and (max-width: 600px) {
+        margin-bottom: 40px;
+    }
+
+    &:last-child {
+
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 0;
+        }
+
+    }
+
+}

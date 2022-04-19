@@ -1,0 +1,113 @@
+.blog, .single, .archive{
+
+
+    .content{
+        margin: 50px 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+
+        .the_post{
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(0,0,0, .03);
+            border: 1px solid #eaeaea;
+
+            h2{
+                display: block;
+            }
+
+
+
+            @include breakpoint(max-mobile){
+                width: 100%;
+
+                margin: 10px 0;
+
+                &:nth-child(odd){
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .meta{
+            font-size: 15px;
+            color: #000000;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 0 0 12px 0;
+            padding: 0 0 10px 0;
+            border-bottom: 2px solid rgba(0,0,0, .05);
+        }
+
+        @include breakpoint(max-tablet){
+            width: 100%;
+            margin: 20px 0;
+        }
+    }
+
+    .postnav{
+        margin-top: 1em;
+        border-top: 1px solid #eaeaea;
+        width: 100%;
+        padding: 1em 0;
+
+        .nav-previous, .nav-next{
+            width: 50%;
+            padding: 0 2em;
+            position: relative;
+
+            &:before, &:after{
+                transition: 450ms $smooth;
+            }
+
+            @include breakpoint (max-mobile){
+                font-size: 12px;
+                line-height: 1.2;
+            }
+        }
+
+        .nav-previous{
+            float: left;
+            text-align: left;
+
+            &:before{
+                content: '\f137';
+                font-family: 'Font Awesome 6 Free';
+                position: absolute;
+                left: 0;
+                font-weight: 900;
+            }
+
+            &:hover{
+                &:before{
+                    transform: translateX(-0.3em);
+                }
+            }
+
+        }
+
+        .nav-next{
+            float: right;
+            text-align: right;
+
+            &:after{
+                content: '\f138';
+                font-family: 'Font Awesome 6 Free';
+                position: absolute;
+                right: 0;
+                font-weight: 900;
+                top: 0;
+            }
+
+            &:hover{
+                &:after{
+                    transform: translateX(0.3em);
+                }
+            }
+        }
+    }
+
+}

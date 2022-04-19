@@ -1,0 +1,27 @@
+{
+    "remotePath": "/wp-content/themes/rbg-holdings-2022",
+    "host": "35.178.54.91",
+    "username": "fred@rbgholdings.co.uk",
+    "password": "HaV4@prC(-O;",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ".php, .js, .scss, .css"
+        ],
+        "path": ""
+    }
+}

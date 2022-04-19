@@ -1,0 +1,309 @@
+/* -------------------------------------------
+***** HOME BANNERS *****
+------------------------------------------- */
+%bv_hidden { 
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden; 
+}
+
+%filled_obj { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.main-slider { 
+  width: 100%; 
+  position: relative; 
+  opacity: 0; 
+  visibility: hidden; 
+  transition:all 1.2s ease; 
+  overflow: hidden;
+
+  .slick-slide {
+    position: relative; 
+    height: 500px;
+
+
+    @extend %bv_hidden;
+
+    iframe { 
+      position: relative; 
+      pointer-events: none; 
+    }
+
+    figure {
+      position: relative; 
+      height: 100%;  
+    }
+    
+    .slide-image { 
+      height: 100%; 
+      background-size: cover; 
+      background-position: bottom; 
+      transition:all .8s ease; 
+
+      &.show { 
+          opacity: 1; 
+      } 
+
+    }
+
+    .embed-player {
+      display: none;
+
+      @include breakpoint(min-mobile) { 
+          display: block;
+      }
+
+    }
+
+    .banner-overlay { 
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      bottom: 0; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      background: rgba(black, .3);
+    }
+
+    .banner-caption-wrapper { 
+      position: absolute; 
+      z-index: 1; 
+      top: 0; 
+      bottom: 0; 
+      left: 0; 
+      right: 0; 
+      transition:all .3s ease; 
+      @extend %bv_hidden;
+
+      .wrap { 
+        height: 100%; 
+        display: flex; 
+        align-items: center; 
+        position: relative;
+    
+        .banner-caption { 
+          width: 100%; 
+          display: flex; 
+          justify-content: center; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          margin-top: 100px;
+    
+          &.has-background { 
+            padding: 20px; 
+            box-sizing: border-box; 
+            background: rgba(white, 0.8);
+    
+            @include breakpoint(min-mobile) { 
+              padding: 30px; 
+            }
+    
+            h2, p {
+              color: $primary;
+            }
+    
+          }
+    
+          h1, h2, p {
+            color: white;
+          }
+    
+          h1, 
+          h2 { 
+            font-family: $secondaryFont; 
+            margin: 0; 
+            position: relative;
+            font-size: 5rem;
+            background: $primary;
+            padding: 0 20px;
+          }
+    
+          p { 
+            max-width: 100%; 
+            padding-top: 2rem; 
+            font-size: 2.1rem; 
+            font-weight: 300;
+            margin-bottom: 0;
+    
+            @include breakpoint(min-tablet) {
+              max-width: 80%;
+            }
+          
+          }
+    
+          .banner-caption-buttons { 
+            margin-top: 40px; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+    
+            @include breakpoint(min-old-mobile) {
+              flex-wrap: wrap; 
+              justify-content: space-between; 
+              align-content: center; 
+              flex-direction: row; 
+              margin: 40px auto 0 auto; 
+            }
+    
+            a {
+              display: flex; 
+              align-self: flex-start; 
+              margin-right: 0; 
+              justify-content: center;
+              margin-bottom: 15px; 
+    
+              @include breakpoint(min-old-mobile) {
+                margin-right: 10px;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+                
+              }
+    
+            }
+    
+          }
+    
+        }
+    
+      }
+      
+    }
+
+    .home-banners-alt-image { 
+      z-index: 20;
+      width: 100%; 
+      height: 100%; 
+      background-repeat: no-repeat; 
+      background-size: cover;
+
+      @include breakpoint(min-mobile) { 
+        display: none; 
+      }
+      
+    }
+
+    .slide-media { 
+      animation:slideOut .4s cubic-bezier(0.4, 0.29, 0.01, 1); 
+    }
+    
+    &.slick-active { 
+      z-index: 1; 
+
+      .slide-media { 
+        animation:slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1); 
+      } 
+
+      .caption { 
+        opacity: 1; 
+        transform:translateY(0); 
+        transition:all .7s cubic-bezier(0.32, 0.34, 0, 1.62) .6s; 
+      } 
+
+    }
+
+    &.youtube {
+
+      iframe { 
+        transform: scale(1.2); 
+      }
+
+    }
+
+  }
+
+  .slick-arrow {
+    position: absolute;
+    cursor: pointer;
+    top: 50vh;
+    height: 5rem;
+    width: 5rem;
+    z-index: 1;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    background: url(img/framework/arrow-right.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &.slick-prev {
+      left: 0;
+      transform: translate(0, -100%) rotate(180deg);
+    }
+  
+    &.slick-next {
+      right: 0;
+      transform: translate(0, -100%);
+  
+    }
+
+  }
+  
+  &.slick-initialized { 
+      opacity: 1; 
+      visibility: visible;
+  }
+    
+  .slick-dots { 
+    position: absolute;
+    bottom: 5%; 
+    left: 0; 
+    right: 0; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    li { 
+      display: inline-block; 
+      vertical-align: top; 
+      margin-right: 8px;
+
+      button { 
+          width: 15px;
+          aspect-ratio: 1;
+          box-sizing: border-box;
+          height: 16px;
+          cursor: pointer;
+          border-radius: 50%; 
+          border: 2px solid $red; 
+          text-indent: -99999px; 
+          vertical-align: middle; 
+          color: #fff; 
+          background-color: transparent; 
+          transition:all .3s ease;
+
+          &:focus { 
+              outline: none; 
+          }
+
+          &:hover { 
+              opacity: 1;
+          }
+
+      }
+
+      &.slick-active { 
+
+        button { 
+            border-color: $red; 
+            opacity: 1; 
+            background: $red; 
+        }
+
+      }
+
+    }
+
+  }
+  
+}

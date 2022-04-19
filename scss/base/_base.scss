@@ -1,0 +1,149 @@
+html {
+	background: white;
+	overflow-x: hidden;
+	font-size: 50%;
+	scroll-behavior: smooth;
+	&.menu-opened {scroll-behavior: auto;}
+
+	@include breakpoint(min-old-mobile) {
+		font-size: 55%;
+	}
+
+	@include breakpoint(min-mobile) {
+		font-size: 57.5%;
+	}
+
+	@include breakpoint(min-tablet) {
+		font-size: 62.5%;
+	}
+
+}
+
+body {
+	font-family:$primaryFont;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	font-weight: 300;
+	color:$text;
+	position: relative;
+
+	// Only use one mixin at a time and remember to comment out before live deploy ⚠️
+	// @include debugging-breakpoints-desktop-down();
+	// @include debugging-breakpoints-mobile-up();
+}
+
+.admin-bar header.reset, .admin-bar header.sticky, .admin-bar header .header-right nav.header-nav {
+	top: 32px;
+	@media screen and (max-width: 782px) {
+   top: 46px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+	   position: fixed;
+	}
+}
+
+main {
+
+	.container{
+		position: relative;
+		overflow: hidden;
+		background: #fafafa;
+		padding-bottom: 1px;
+
+		.content{
+			z-index: 10;
+		}
+
+		&:before{
+			content: '';
+			width: 33%;
+			height: 100%;
+			background: white; 
+			transform: skew(-30deg);
+			transform-origin: top left;
+			top: 0;
+			left: 0;
+			position: absolute;
+			z-index: 1;
+		}
+
+	}
+}
+
+img {
+	max-width: 100%;
+	width: auto\9;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+iframe {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: 0.875rem;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000;
+	}
+
+}
+
+.fancybox-header {
+	overflow: visible;
+
+	@include target-ie {
+		overflow: hidden;
+		height: 100%;
+	}
+
+}
+
+.ie-fancybox-body {
+
+	@include target-ie {
+		overflow: visible !important;
+		height: 100%;
+	}
+
+}
+
+
+body {
+
+	&.fancybox-active {
+
+		.fancybox-infobar {
+			display: none;
+		}
+	}
+
+}

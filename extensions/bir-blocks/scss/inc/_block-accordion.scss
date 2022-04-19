@@ -1,0 +1,50 @@
+.wp-block-kadence-accordion {
+
+    .kt-accordion-inner-wrap {
+
+        .wp-block-kadence-pane {
+
+            .kt-blocks-accordion-header {
+                font-size: 1.8rem;
+                border-radius: 0px 0px 0px 0px;
+                border-width: 0px 0px 0px 0px;
+                padding: 20px 20px 20px 20px;
+                margin-top: 14px;
+                background: $secondary;
+                color: white;
+
+                .kt-blocks-accordion-icon-trigger {
+
+                    &:before,
+                    &:after {
+                        background: white;
+                    }
+
+                }
+
+                &:hover {
+                    background: lighten($secondary, 10%);
+                }
+
+                &.kt-accordion-panel-active {
+                    background: $primary;
+                }
+
+            }
+
+            .kt-accordion-panel-inner {
+                border: 0;
+                padding: 20px;
+
+                @include breakpoint(min-mobile) {
+                    padding: 40px 20px;
+                }
+
+            }
+
+
+        }
+
+    }
+
+}

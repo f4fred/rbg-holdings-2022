@@ -1,0 +1,34 @@
+.social-wrapper { 
+    float: right;
+
+    ul {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 0;
+        margin-right: 20px;
+
+        li { 
+            padding: 0 8px;
+            list-style: none;
+            margin-bottom: 0;
+
+            a {
+                font-size: 21px;
+                color: $primary;
+                transition-duration: 0.3s;
+
+                &:hover {
+                    color:$secondary;
+                    transition-duration: 0.3s;
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+}

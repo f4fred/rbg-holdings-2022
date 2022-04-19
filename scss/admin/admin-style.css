@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:600');
+
+/* --- admin --- */
+#wpfooter {
+    padding: 5px 20px;
+    background: #23282d;
+}
+#footer-upgrade,
+#footer-left {
+    font-size: 12px!important;
+    color: #e4e4e4;
+}
+#footer-left a {
+    color: #fff;
+    text-decoration: none;
+}
+#footer-left a:hover,
+#footer-left a:active,
+#footer-left a:focus {
+    text-decoration: underline;
+}
+#footer-left a.cmb {
+    font-family: Dosis, sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+#footer-left a span {
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    padding: 0 1px 0 0;
+    color: #fed150;
+}
+#footer-left a strong {
+    font-weight: bold;
+}
+
+/* --- vc --- */
+.hdn {
+    display: none;
+}
+
+.wp-block {
+    max-width: 1100px;
+}

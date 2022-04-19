@@ -1,0 +1,190 @@
+/* -------------------------------------------
+***** Footer *****
+------------------------------------------- */
+footer {
+	position: inherit;
+	z-index: 10;
+	color: #fff;
+	background: $primary;
+
+	a {
+		transition: 200ms $smooth;
+		color: white;
+		font-weight: 400;
+
+		&:hover {
+			color: $red;
+
+			path {
+				fill:  $red;
+				transition: fill .2s ease-in-out
+			}
+		}
+
+	}
+
+	.footer-columns {
+		padding: 20px 0;
+
+		@include breakpoint(min-old-mobile) {
+			padding: 40px 0;
+		}
+
+		.wrap {
+
+			@include breakpoint(min-old-mobile) {
+				flex-wrap: wrap;
+				display: flex;
+			}
+
+			.col {
+				display: flex;
+				flex-direction: column;
+				margin-right: 20px;
+
+				@include breakpoint(min-old-mobile) {
+					width: calc(50% - 20px);
+				}
+
+				@include breakpoint(min-tablet) {
+					width: calc(33% - 20px);
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+
+
+				}
+
+				ul{
+					list-style: none;
+					padding: 0;
+					margin-bottom: 0;
+
+					&.fa-ul{
+						margin-left: 1.5em;
+					}
+					li{
+						list-style: none;
+					}
+
+					i{
+						color: $red;
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+
+	.sub-footer {
+		padding: 20px 0;
+		background: #3E3E3E;
+		border-top: 1px solid $red;
+
+		.wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+
+			@include breakpoint(max-mobile){
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			
+			.copyright {
+				font-size: 16px;
+				margin: 0;
+			}
+
+			.legal {
+				transform: translateX(-1em);
+
+				ul {
+					margin-bottom: 0;
+					padding: 0;
+					display: flex;
+					flex-direction: row;
+
+					li {
+						list-style: none;
+						margin-bottom: 0;
+						text-align: center;
+						padding: 0 10px;
+						
+
+
+						&:last-child {
+
+							@include breakpoint(max-tablet) {
+								padding-right: 0;
+								border-right: 0;
+							}
+
+						}
+
+
+
+						a {
+							color: white;
+							font-size: 16px;
+							transition: 200ms $smooth;
+
+							&:hover{
+								color: $red;
+							}
+						}
+
+					}
+
+				}
+
+				@include breakpoint(max-mobile){
+					transform: none;
+
+					ul{
+						flex-direction: column;
+						align-items: flex-start;
+
+						li{
+							padding: 5px 0;
+						}
+					}
+
+				}
+
+			}
+
+			.credit {
+				margin: 0;
+				color: rgba(white, 0.4);
+				a{
+					color: rgba(white, 0.4);
+					transition: 200ms $smooth;
+					font-weight: 400;
+
+					span{
+						color: rbga(white, 0.4);
+						transition: 200ms $smooth;
+					}
+
+					&:hover{
+						color: white;
+
+						span{
+							color: #FFD341;
+						}
+					}
+				}
+			}
+
+
+		}
+
+
+	}
+
+}

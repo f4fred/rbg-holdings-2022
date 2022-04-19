@@ -1,0 +1,105 @@
+/* --- TABLES --- */
+main {
+
+	table, .tablepress {
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+		font-size: 16px;
+		margin-bottom: 2rem;
+
+		& + h2,
+		& + h3,
+		& + h4, 
+		& + h5,
+		& + h6 {
+			margin-top: 3rem;
+		}
+
+		thead, tfoot {
+			color: black;
+			text-transform: unset;
+
+			tr {
+				border-bottom: 3px solid $primary;
+			}
+
+			th {
+				font-weight: 600;
+				font-size: 18px;
+				background: none;
+				border-bottom: 0px
+			}
+
+		}
+
+		thead {
+
+			th {
+				text-align: left;
+				padding: 10px 20px;
+				color: $primary;
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+
+		}
+
+		tbody {
+			border-bottom: 1px solid $red;
+
+			tr {
+				border-bottom: 1px solid rgba($secondary, 1);
+
+				&:last-of-type{
+					border-bottom: 0;
+				}
+
+				td {
+					padding: 10px;
+					vertical-align: middle;
+					padding: 10px 20px;
+				}
+
+				th {
+					font-weight: 500;
+				}
+
+			}
+
+		}
+
+		tfoot {
+
+			th {
+				background: none;
+			}
+			
+		}
+
+	}
+
+	@include breakpoint(max-mobile){
+
+		table{
+			
+			thead{
+				th{
+					font-size: 14px;
+					vertical-align: middle;
+				}
+			}
+
+			tbody{
+				.document_date, .file_name{
+					font-size: 14px;
+				}
+			}
+
+
+
+		}
+
+	}
+
+}

@@ -1,0 +1,101 @@
+{
+    "key": "group_5e3c1d6ac4ef2",
+    "title": "Document",
+    "fields": [
+        {
+            "key": "field_5e3c1ebbceb4a",
+            "label": "File Select",
+            "name": "file_select",
+            "type": "file",
+            "instructions": "Select or upload a file",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5e3c1edeceb4b",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "Select a date (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_5e3d7103c16e7",
+            "label": "Custom Sort Number",
+            "name": "custom_sort",
+            "type": "number",
+            "instructions": "Customise the order of a Document Table (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5e56833251062",
+            "label": "Custom Link Class",
+            "name": "custom_class",
+            "type": "text",
+            "instructions": "Add a class to the document's anchor tag(s) (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "documents"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1647952567
+}
